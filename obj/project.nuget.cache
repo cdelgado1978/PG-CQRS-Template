@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "LeYX5gU87wwA6fL0TGC9jy2yrqj0vC+QLNGMD8/JtXTQExlB2eH26Pvl7GkmCK+QKQjjyNGlEocBGkJ7OIWbhA==",
+  "success": true,
+  "projectFilePath": "D:\\Fuentes\\PalmeaGroup\\Proyectos\\PG.Clean.Template\\Template\\CQRSTemplate\\CQRSTemplate.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CesarDelgado-PC\\.nuget\\packages\\fluentvalidation\\10.0.4\\fluentvalidation.10.0.4.nupkg.sha512",
+    "C:\\Users\\CesarDelgado-PC\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
