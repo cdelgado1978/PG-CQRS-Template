@@ -1,0 +1,30 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>Enter EntityName</DefaultName>
+    <Name>CQRS - Template</Name>
+    <Description>Command Query Responsibility Segregation</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System.Threading</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.Threading.Tasks</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>MediatR</Assembly>
+      </Reference>
+    </References>
+          <ProjectItem SubType="" TargetFileName="$fileinputname$/Command/Create$fileinputname$Command.cs" ReplaceParameters="true">TemplateCreateCommand.cs</ProjectItem>
+          <ProjectItem SubType="" TargetFileName="$fileinputname$/Command/Update$fileinputname$Command.cs" ReplaceParameters="true">TemplateUpdateCommand.cs</ProjectItem>
+          <ProjectItem SubType="" TargetFileName="$fileinputname$/Command/$fileinputname$CommandValidation.cs" ReplaceParameters="true">TemplateCommandValidation.cs</ProjectItem>
+          <ProjectItem SubType="" TargetFileName="$fileinputname$/Query/$fileinputname$Query.cs" ReplaceParameters="true">TemplateQuery.cs</ProjectItem>
+          <ProjectItem SubType="" TargetFileName="$fileinputname$/Query/$fileinputname$QueryById.cs" ReplaceParameters="true">TemplateQueryById.cs</ProjectItem>
+          <ProjectItem SubType="" TargetFileName="$fileinputname$/Response/$fileinputname$ResponseModel.cs" ReplaceParameters="true">TemplateResponseModel.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
