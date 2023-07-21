@@ -1,8 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using CuentasClaras.Application.Common.Interfaces;
-using CuentasClaras.Application.$fileinputname$.Responses;
+using AutoMapper;
 
 namespace $rootnamespace$.$fileinputname$.Queries
 {
@@ -26,11 +25,10 @@ namespace $rootnamespace$.$fileinputname$.Queries
             {
                 
 
-                IQueryable<$fileinputname$> entity = _dbContext.$fileinputname$.where(e=> e.Id == request.Id);
+                $fileinputname$ entity = _dbContext.$fileinputname$.FirstOrDefault(e=> e.Id == request.Id) ?? throw new NotFoundException(nameof($fileinputname$), request.Id);
 
-                var result = _mapper.Map<$fileinputname$ResponseModel>(entity);
+                return _mapper.Map<$fileinputname$ResponseModel>(entity);
 
-                return result;
             }
         }
     }

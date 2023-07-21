@@ -1,6 +1,5 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using MediatR;
 
 namespace $rootnamespace$.$fileinputname$.Responses
 {

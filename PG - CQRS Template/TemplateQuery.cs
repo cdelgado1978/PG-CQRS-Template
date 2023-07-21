@@ -1,8 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using MediatR;
-using CuentasClaras.Application.Common.Interfaces;
-using CuentasClaras.Application.$fileinputname$.Responses;
 
 namespace $rootnamespace$.$fileinputname$.Queries
 {
@@ -22,12 +21,10 @@ namespace $rootnamespace$.$fileinputname$.Queries
             public async Task<List<$fileinputname$ResponseModel>> Handle(Get$fileinputname$Query request, CancellationToken cancellationToken)
             {
 
-
                 IQueryable<$fileinputname$> entity = _dbContext.$fileinputname$;
 
-                var result = _mapper.Map<List<$fileinputname$ResponseModel>>(entity);
+                return _mapper.Map<List<$fileinputname$ResponseModel>>(entity);
 
-                return result;
             }
         }
     }

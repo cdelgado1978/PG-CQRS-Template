@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using CuentasClaras.Application.Common.Interfaces;
+using AutoMapper;
 
 namespace $rootnamespace$.$fileinputname$.Commands
 {
@@ -13,21 +13,26 @@ namespace $rootnamespace$.$fileinputname$.Commands
 
         //Properties Here
 
-        public class Handler : IRequestHandler<Update$fileinputname$Command>
+        public class Update$fileinputname$CommandHandler : IRequestHandler<Update$fileinputname$Command>
         {
             private readonly IApplicationDbContext _dbContext;
 
-            public Handler(IApplicationDbContext dbContext)
+             private readonly IMapper _mapper;
+
+            public Update$fileinputname$CommandHandler(IApplicationDbContext dbContext, IMapper mapper)
             {
                 _dbContext = dbContext;
+                _mapper = mapper;
+
             }
 
             public async Task<Unit> Handle(Update$fileinputname$Command request, CancellationToken cancellationToken)
             {
-                 var _$fileinputname$ = _dbContext.$fileinputname$.FirstOrDefault(e => e.Id == request.Id);
+                 var _$fileinputname$ = _dbContext.$fileinputname$.FirstOrDefault(e => e.Id == request.Id) ?? throw new NotFoundException(nameof($fileinputname$), request.Id);
             
+                var updated$fileinputname$ = _mapper.Map(request, _$fileinputname$);
 
-                _dbContext.$fileinputname$.Update(_$fileinputname$);
+                _dbContext.$fileinputname$.Update(updated$fileinputname$);
 
                 await _dbContext.SaveChangesAsync(cancellationToken);
 
